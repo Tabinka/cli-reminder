@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime, timedelta
 import time
 import requests
 import os
@@ -12,11 +12,11 @@ reminded_prompt = input("What should I remind you of? ")
 
 print(f"Ok I will remind you of: {reminded_prompt}")
 
-date_prompt = input("When it should be reminded? (YYYY-MM-DD HH:MM) ")
+date_prompt = input("When it should be reminded? ")
 
 print(f"Ok, I will remind you about it in this time: {date_prompt}")
 
-datetime_object = datetime.datetime.strptime(date_prompt, "%Y-%m-%d %H:%M")
+datetime_object = datetime.strptime(date_prompt, "%Y-%m-%d %H:%M")
 timestamp = datetime_object.timestamp()
 
 print("Reminder was set!")
